@@ -16,7 +16,7 @@ def fibonacci(numberOfElements):
         count += 1
 
     return(retval)
-    
+
 if __name__ == "__main__":
     numberOfElements = int(input("Number of elements of the fibonacci series to be printed: "))
     print(fibonacci(numberOfElements))
