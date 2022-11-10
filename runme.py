@@ -1,6 +1,4 @@
-
 from fibonacci import *
-
 
 class FibonacciSequence():
 
@@ -13,8 +11,12 @@ class FibonacciSequence():
 
 if __name__ == '__main__':
 
-    algorithm = Iterative()
-    fibonacci = FibonacciSequence(algorithm)
     numberOfElements = int(input("Enter number of elements : "))
 
-    print('Fibonacci sequence : ', fibonacci.generate(numberOfElements))
+    algorithm = Iterative()
+    fibonacci = FibonacciSequence(algorithm)
+    print('Fibonacci sequence (' + algorithm.__class__.__name__ + ') : ', fibonacci.generate(numberOfElements))
+
+    algorithm = Recursive()
+    fibonacci = FibonacciSequence(algorithm)
+    print('Fibonacci sequence (' + algorithm.__class__.__name__ + ') : ', fibonacci.generate(numberOfElements))

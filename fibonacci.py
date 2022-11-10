@@ -26,12 +26,13 @@ class Iterative(Fibonacci):
 
         return(retval)
 
+
 class Recursive(Fibonacci):
 
     def generate(self, numberOfElements):
         def _fibonacci_req(n):
-            if n in {-1, 1}:
+            if n in {0, 1}:
                 return n
-            return _fibonacci_req(n-2) + _fibonacci_req(n-2)
+            return _fibonacci_req(n-1) + _fibonacci_req(n-2)
 
         return [_fibonacci_req(n) for n in range(numberOfElements)]
