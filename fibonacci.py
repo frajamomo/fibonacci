@@ -30,9 +30,13 @@ class Iterative(Fibonacci):
 class Recursive(Fibonacci):
 
     def generate(self, numberOfElements):
+
         def _fibonacci_req(n):
             if n in {0, 1}:
                 return n
             return _fibonacci_req(n-1) + _fibonacci_req(n-2)
+
+        if not isinstance(numberOfElements, int):
+            raise ValueError("Invalid input")
 
         return [_fibonacci_req(n) for n in range(numberOfElements)]
