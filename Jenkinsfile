@@ -8,5 +8,11 @@ pipeline {
                 echo "$GIT_BRANCH"
             }
         }
+
+        stage ('Test'){
+            steps {
+                sh 'python -m unittest --verbose'
+            }
+        }
     }
 }
