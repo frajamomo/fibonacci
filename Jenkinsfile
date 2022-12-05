@@ -1,5 +1,5 @@
 pipeline {
-    agent { dockerfile true }
+    agent any
 
     stages {
         stage('Verify Branch') {
@@ -12,6 +12,14 @@ pipeline {
         stage ('Test'){
             steps {
                 sh 'python -m unittest --verbose'
+            }
+            post {
+                success {
+                    echo "Test PASS"
+                }
+                failure {
+                    echo "Test FAIL"
+                }
             }
         }
     }
