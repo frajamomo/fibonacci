@@ -13,14 +13,6 @@ pipeline {
             steps {
                 sh 'python -m unittest --verbose'
             }
-            post {
-                success {
-                    echo "Test PASS"
-                }
-                failure {
-                    echo "Test FAIL"
-                }
-            }
         }
     }
 }
