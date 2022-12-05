@@ -2,8 +2,17 @@ pipeline {
     agent { dockerfile true }
 
     stages {
-        stage ('Test') {
-            sh 'python -m unittest --verbose'
+        stage('Verify Branch') {
+
+            steps {
+                echo "$GIT_BRANCH"
+            }
+        }
+
+        stage ('Test'){
+            steps {
+                sh 'python -m unittest --verbose'
+            }
         }
     }
 }
