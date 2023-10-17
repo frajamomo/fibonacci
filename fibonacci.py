@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from functools import lru_cache
 
 class Fibonacci(ABC):
 
@@ -49,6 +50,7 @@ class Recursive(Fibonacci):
 
     def generate(self, numberOfElements):
 
+        @lru_cache()
         def _fibonacci_req(n):
             if n in {0, 1}:
                 return n
