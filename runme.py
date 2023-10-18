@@ -7,12 +7,15 @@ if __name__ == '__main__':
 
     algorithm = Iterative_while_loop()
     fibonacci = FibonacciSequence(algorithm)
-    print('{0: <50}'.format('Fibonacci sequence (' + algorithm.__class__.__name__ + ') : '), fibonacci.generate(numberOfElements))
+    print('{0: <50}'.format('Fibonacci sequence (' + algorithm.__class__.__name__ + ') : '),
+          fibonacci.generate(numberOfElements))
 
     algorithm = Recursive()
     fibonacci = FibonacciSequence(algorithm)
-    print('{0: <50}'.format('Fibonacci sequence (' + algorithm.__class__.__name__ + ') : '), fibonacci.generate(numberOfElements))
+    print('{0: <50}'.format('Fibonacci sequence (' + algorithm.__class__.__name__ + ') : '),
+          fibonacci.generate(numberOfElements))
 
     algorithm = Iterative_for_loop()
     fibonacci = FibonacciSequence(algorithm)
-    print('{0: <50}'.format('Fibonacci sequence (' + algorithm.__class__.__name__ + ') : '), fibonacci.generate(numberOfElements))
+    print('{0: <50}'.format('Fibonacci sequence (' + algorithm.__class__.__name__ + ') : '),
+          fibonacci.generate(numberOfElements))

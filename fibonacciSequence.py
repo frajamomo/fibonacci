@@ -1,5 +1,3 @@
-from fibonacci import *
-
 class FibonacciSequence():
 
     def __init__(self, algorithm):

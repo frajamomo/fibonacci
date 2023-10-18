@@ -2,6 +2,7 @@ import unittest
 from fibonacci import Iterative_while_loop, Iterative_for_loop, Recursive
 from fibonacciSequence import FibonacciSequence
 
+
 class TestingIterative_while_loop(unittest.TestCase):
 
     def setUp(self):
@@ -20,6 +21,7 @@ class TestingIterative_while_loop(unittest.TestCase):
         with self.assertRaises(ValueError) as context:
             self.fibonacci.generate("wrong")
         self.assertEqual("Invalid input", str(context.exception))
+
 
 class TestingIterative_for_loop(unittest.TestCase):
 
@@ -53,7 +55,7 @@ class TestingRecursive(unittest.TestCase):
         self.assertEqual(self.fibonacci.generate(1), [0])
 
     def test_high_value(self):
-        self.assertEqual(self.fibonacci.generate(20)[-1], 4181 )
+        self.assertEqual(self.fibonacci.generate(20)[-1], 4181)
 
     def test_wrong_raises(self):
         with self.assertRaises(ValueError) as context:

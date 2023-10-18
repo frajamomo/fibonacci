@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from functools import lru_cache
 
+
 class Fibonacci(ABC):
 
     @abstractmethod
@@ -12,7 +13,7 @@ class Iterative_while_loop(Fibonacci):
 
     def generate(self, numberOfElements):
         count = 0
-        i,j = 0,1
+        i, j = 0, 1
         retval = []
 
         if not isinstance(numberOfElements, int):
@@ -31,8 +32,8 @@ class Iterative_while_loop(Fibonacci):
 class Iterative_for_loop(Fibonacci):
 
     def generate(self, numberOfElements):
-        i,j = 0,1
-        retval = [0,1]
+        i, j = 0, 1
+        retval = [0, 1]
 
         if not isinstance(numberOfElements, int):
             raise ValueError("Invalid input")
@@ -42,7 +43,7 @@ class Iterative_for_loop(Fibonacci):
         if numberOfElements == 1:
             return [0]
 
-        for x in range(2,numberOfElements):
+        for x in range(2, numberOfElements):
             temp = i + j
             i = j
             j = temp
