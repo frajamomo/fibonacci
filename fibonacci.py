@@ -37,6 +37,11 @@ class Iterative_for_loop(Fibonacci):
         if not isinstance(numberOfElements, int):
             raise ValueError("Invalid input")
 
+        if (numberOfElements == 0):
+            return []
+        if (numberOfElements == 1):
+            return [0]
+
         for x in range(2,numberOfElements):
             temp = i + j
             i = j
