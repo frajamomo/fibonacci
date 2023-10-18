@@ -25,7 +25,7 @@ class Iterative_while_loop(Fibonacci):
             j = temp
             count += 1
 
-        return(retval)
+        return retval
 
 
 class Iterative_for_loop(Fibonacci):
@@ -37,9 +37,9 @@ class Iterative_for_loop(Fibonacci):
         if not isinstance(numberOfElements, int):
             raise ValueError("Invalid input")
 
-        if (numberOfElements == 0):
+        if numberOfElements == 0:
             return []
-        if (numberOfElements == 1):
+        if numberOfElements == 1:
             return [0]
 
         for x in range(2,numberOfElements):
@@ -48,7 +48,7 @@ class Iterative_for_loop(Fibonacci):
             j = temp
             retval.append(temp)
 
-        return(retval)
+        return retval
 
 
 class Recursive(Fibonacci):
@@ -56,10 +56,10 @@ class Recursive(Fibonacci):
     def generate(self, numberOfElements):
 
         @lru_cache()
-        def _fibonacci_req(n):
-            if n in {0, 1}:
-                return n
-            return _fibonacci_req(n-1) + _fibonacci_req(n-2)
+        def _fibonacci_req(number):
+            if number in {0, 1}:
+                return number
+            return _fibonacci_req(number-1) + _fibonacci_req(number-2)
 
         if not isinstance(numberOfElements, int):
             raise ValueError("Invalid input")
