@@ -66,3 +66,18 @@ class Recursive(Fibonacci):
             raise ValueError("Invalid input")
 
         return [_fibonacci_req(n) for n in range(numberOfElements)]
+
+
+class Yield(Fibonacci):
+
+    def _fib(self, num):
+        i, j = 0, 1
+        for _ in range(num):
+            yield i
+            i, j = j, i + j
+
+    def generate(self, numberOfElements):
+        if not isinstance(numberOfElements, int):
+            raise ValueError("Invalid input")
+
+        return list(self._fib(numberOfElements))
