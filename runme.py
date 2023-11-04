@@ -1,11 +1,11 @@
-from fibonacci import Iterative_while_loop, Iterative_for_loop, Recursive, Yield
+from fibonacci import IterativeWhileLoop, IterativeForLoop, Recursive, Yield
 from fibonacciSequence import FibonacciSequence
 
 if __name__ == '__main__':
 
-    algorithms = [Iterative_while_loop(),
+    algorithms = [IterativeWhileLoop(),
                   Recursive(),
-                  Iterative_for_loop(),
+                  IterativeForLoop(),
                   Yield()]
 
     numberOfElements = int(input("Enter number of elements : "))

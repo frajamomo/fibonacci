@@ -1,12 +1,12 @@
 import unittest
-from fibonacci import Iterative_while_loop, Iterative_for_loop, Recursive, Yield
+from fibonacci import IterativeWhileLoop, IterativeForLoop, Recursive, Yield
 from fibonacciSequence import FibonacciSequence
 
 
-class TestingIterative_while_loop(unittest.TestCase):
+class TestingIterativeWhileLoop(unittest.TestCase):
 
     def setUp(self):
-        self.fibonacci = FibonacciSequence(Iterative_while_loop())
+        self.fibonacci = FibonacciSequence(IterativeWhileLoop())
 
     def test_empty_value(self):
         self.assertEqual(self.fibonacci.generate(0), [])
@@ -23,10 +23,10 @@ class TestingIterative_while_loop(unittest.TestCase):
         self.assertEqual("Invalid input", str(context.exception))
 
 
-class TestingIterative_for_loop(unittest.TestCase):
+class TestingIterativeForLoop(unittest.TestCase):
 
     def setUp(self):
-        self.fibonacci = FibonacciSequence(Iterative_for_loop())
+        self.fibonacci = FibonacciSequence(IterativeForLoop())
 
     def test_empty_value(self):
         self.assertEqual(self.fibonacci.generate(0), [])

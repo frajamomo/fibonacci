@@ -9,7 +9,7 @@ class Fibonacci(ABC):
         pass
 
 
-class Iterative_while_loop(Fibonacci):
+class IterativeWhileLoop(Fibonacci):
 
     def generate(self, numberOfElements):
         count = 0
@@ -29,7 +29,7 @@ class Iterative_while_loop(Fibonacci):
         return retval
 
 
-class Iterative_for_loop(Fibonacci):
+class IterativeForLoop(Fibonacci):
 
     def generate(self, numberOfElements):
         i, j = 0, 1
@@ -43,7 +43,7 @@ class Iterative_for_loop(Fibonacci):
         if numberOfElements == 1:
             return [0]
 
-        for x in range(2, numberOfElements):
+        for _ in range(2, numberOfElements):
             temp = i + j
             i = j
             j = temp
