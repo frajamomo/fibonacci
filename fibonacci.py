@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 from functools import lru_cache
 
+INVALID_INPUT="Invalid input"
+
 
 class Fibonacci(ABC):
 
@@ -17,7 +19,7 @@ class IterativeWhileLoop(Fibonacci):
         retval = []
 
         if not isinstance(numberOfElements, int):
-            raise ValueError("Invalid input")
+            raise ValueError(INVALID_INPUT)
 
         while count < numberOfElements:
             retval.append(i)
@@ -36,7 +38,7 @@ class IterativeForLoop(Fibonacci):
         retval = [0, 1]
 
         if not isinstance(numberOfElements, int):
-            raise ValueError("Invalid input")
+            raise ValueError(INVALID_INPUT)
 
         if numberOfElements == 0:
             return []
@@ -63,7 +65,7 @@ class Recursive(Fibonacci):
             return _fibonacci_req(number-1) + _fibonacci_req(number-2)
 
         if not isinstance(numberOfElements, int):
-            raise ValueError("Invalid input")
+            raise ValueError(INVALID_INPUT)
 
         return [_fibonacci_req(n) for n in range(numberOfElements)]
 
@@ -78,6 +80,6 @@ class Yield(Fibonacci):
 
     def generate(self, numberOfElements):
         if not isinstance(numberOfElements, int):
-            raise ValueError("Invalid input")
+            raise ValueError(INVALID_INPUT)
 
         return list(self._fib(numberOfElements))
